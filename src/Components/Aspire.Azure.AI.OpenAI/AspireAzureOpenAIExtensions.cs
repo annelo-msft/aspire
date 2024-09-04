@@ -1,9 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.ClientModel;
 using Aspire.Azure.AI.OpenAI;
 using Aspire.Azure.Common;
-using Azure;
 using Azure.AI.OpenAI;
 using Azure.Core;
 using Azure.Core.Extensions;
@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Logging;
 using OpenAI;
 
 namespace Microsoft.Extensions.Hosting;
@@ -78,8 +79,11 @@ public static class AspireAzureOpenAIExtensions
             AzureClientFactoryBuilder azureFactoryBuilder, AzureOpenAISettings settings, string connectionName,
             string configurationSectionName)
         {
-            return azureFactoryBuilder.AddClient<AzureOpenAIClient, AzureOpenAIClientOptions>((options, _, _) =>
+            return azureFactoryBuilder.AddClient<AzureOpenAIClient, AzureOpenAIClientOptions>((options, _, provider) =>
             {
+                ILoggerFactory loggerFactory = provider.GetRequiredService<ILoggerFactory>();
+                options.LoggerFactory = loggerFactory;
+
                 if (settings.Endpoint is null)
                 {
                     throw new InvalidOperationException($"An OpenAIClient could not be configured. Ensure valid connection information was provided in 'ConnectionStrings:{connectionName}' or specify a '{nameof(AzureOpenAISettings.Endpoint)}' or '{nameof(AzureOpenAISettings.Key)}' in the '{configurationSectionName}' configuration section.");
@@ -90,7 +94,7 @@ public static class AspireAzureOpenAIExtensions
 
                     if (!string.IsNullOrEmpty(settings.Key))
                     {
-                        var credential = new AzureKeyCredential(settings.Key);
+                        var credential = new ApiKeyCredential(settings.Key);
                         return new AzureOpenAIClient(settings.Endpoint, credential, options);
                     }
                     else

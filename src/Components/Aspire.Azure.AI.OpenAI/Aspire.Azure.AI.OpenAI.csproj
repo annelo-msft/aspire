@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.AI.OpenAI" />
+    <ProjectReference Include="..\..\..\..\azure-sdk-for-net\sdk\openai\Azure.AI.OpenAI\src\Azure.AI.OpenAI.csproj" />
     <PackageReference Include="Microsoft.Extensions.Azure" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" />

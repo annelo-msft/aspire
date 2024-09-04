@@ -583,6 +583,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspire.Hosting.Dapr.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspire.Hosting.AWS.Tests", "tests\Aspire.Hosting.AWS.Tests\Aspire.Hosting.AWS.Tests.csproj", "{6F71BC73-B703-4E64-98E0-801781302E7A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.ClientModel", "..\azure-sdk-for-net\sdk\core\System.ClientModel\src\System.ClientModel.csproj", "{57175D46-E823-4703-A2BD-07966F296EB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.AI.OpenAI", "..\azure-sdk-for-net\sdk\openai\Azure.AI.OpenAI\src\Azure.AI.OpenAI.csproj", "{C647241E-5EEB-4EF1-AEB4-003FCF84B508}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.Core", "..\azure-sdk-for-net\sdk\core\Azure.Core\src\Azure.Core.csproj", "{FB001224-B13D-44B5-9D0B-2783D0A35FB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1537,6 +1543,18 @@ Global
 		{6F71BC73-B703-4E64-98E0-801781302E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F71BC73-B703-4E64-98E0-801781302E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F71BC73-B703-4E64-98E0-801781302E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57175D46-E823-4703-A2BD-07966F296EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57175D46-E823-4703-A2BD-07966F296EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57175D46-E823-4703-A2BD-07966F296EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57175D46-E823-4703-A2BD-07966F296EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C647241E-5EEB-4EF1-AEB4-003FCF84B508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C647241E-5EEB-4EF1-AEB4-003FCF84B508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C647241E-5EEB-4EF1-AEB4-003FCF84B508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C647241E-5EEB-4EF1-AEB4-003FCF84B508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB001224-B13D-44B5-9D0B-2783D0A35FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB001224-B13D-44B5-9D0B-2783D0A35FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB001224-B13D-44B5-9D0B-2783D0A35FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB001224-B13D-44B5-9D0B-2783D0A35FB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
